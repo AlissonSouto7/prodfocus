@@ -1,0 +1,19 @@
+# CONFIGURANDO A PORTA DA APi
+server:
+ port: 8080
+ 
+
+# CONFIGURANDO NOME DA APLICACAO
+spring:
+  application:
+   name: prodfocus
+   
+# CONFIGURANDO DATABASE   
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/prodfocus?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: Alisson71011
+  jpa:
+    hibernate:
+      ddl-auto: update
