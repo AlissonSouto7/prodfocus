@@ -1,14 +1,10 @@
-# CONFIGURANDO A PORTA DA APi
+# CONFIGURANDO O NOME DA API    
 server:
- port: 8080
- 
-
-# CONFIGURANDO NOME DA APLICACAO
+  servlet:
+    context-path: /prodfocus 
+    
+# CONFIGURANDO O DATABASE    
 spring:
-  application:
-   name: prodfocus
-   
-# CONFIGURANDO DATABASE   
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/prodfocus?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
@@ -17,3 +13,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+      
+# CONFIGURANDO O SWAGGER    
+springdoc:
+  swagger-ui:
+    path: /swagger
