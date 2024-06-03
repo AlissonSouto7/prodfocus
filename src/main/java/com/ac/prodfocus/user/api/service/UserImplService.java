@@ -6,10 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.ac.prodfocus.user.api.repository.UserRepository;
 import com.ac.prodfocus.user.domain.User;
-import com.ac.prodfocus.user.domain.dto.request.UserRequestNew;
 import com.ac.prodfocus.user.domain.dto.request.UserRequestUpdate;
 import com.ac.prodfocus.user.domain.dto.response.UserResponse;
-import com.ac.prodfocus.user.domain.dto.response.UserResponseCreated;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,16 +19,6 @@ import lombok.extern.log4j.Log4j2;
 public class UserImplService implements UserService {
 	
 	private final UserRepository repository;
-
-	@Override
-	public UserResponseCreated registerUser(@Valid UserRequestNew newRequest) {
-		log.info("[START] UserImplService - registerUser");
-
-		User newUser = repository.saveUser(new User(newRequest));
-		
-		log.info("[FINISH] UserImplService - registerUser");
-		return UserResponseCreated.builder().idUser(newUser.getIdUser()).build();
-	}
 
 	@Override
 	public UserResponse getUser(UUID idUser) {

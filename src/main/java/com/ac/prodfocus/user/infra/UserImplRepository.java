@@ -1,5 +1,6 @@
 package com.ac.prodfocus.user.infra;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
@@ -45,5 +46,15 @@ public class UserImplRepository implements UserRepository {
 		repository.delete(user);
 		
 		log.info("[FINISH] UserImplRepository - deleteUser");
+	}
+
+	@Override
+	public Optional<User> findByUsername(String email) {
+		log.info("[START] UserImplRepository - findByUsername");
+		
+		Optional<User> userExist = repository.findByEmail(email);
+		
+		log.info("[FINISH] UserImplRepository - findByUsername");
+		return userExist;
 	}
 }

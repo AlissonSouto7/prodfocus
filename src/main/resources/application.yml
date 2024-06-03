@@ -8,8 +8,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/prodfocus?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
-    username: root
-    password: Alisson71011
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,3 +18,10 @@ spring:
 springdoc:
   swagger-ui:
     path: /swagger
+    
+# CONFIGURANDO AS CHAVES RSA
+jwt:
+  public:
+    key: classpath:app.pub
+  private:
+    key: classpath:app.key
