@@ -6,6 +6,8 @@ target/
 mvnw
 mvnw.cmd
 .mvn/**
+src/main/resources/app.key
+src/main/resources/app.pub
 
 ### STS ###
 .apt_generated
